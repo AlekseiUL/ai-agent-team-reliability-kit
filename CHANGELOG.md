@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.1.1
+
+README and adoption polish:
+
+- added Mermaid operating-flow diagram;
+- added “How this is different” positioning section;
+- added 30-minute adoption guide;
+- added real-world scenarios for public GitHub releases, multi-agent research briefs, and coding-agent review loops;
+- bumped package metadata to `0.1.1`.
+
 ## v0.1.0
 
 Initial public release:

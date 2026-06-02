@@ -23,6 +23,33 @@ They fail for boring reasons:
 
 This kit fixes those boring parts.
 
+## How it works
+
+```mermaid
+flowchart TD
+    A[Human goal] --> B[Coordinator / dispatcher]
+    B --> C[Task contract]
+    C --> D[Specialist worker]
+    D --> E{Verification gate}
+    E -->|passed| F[Done summary]
+    E -->|needs decision| G[Blocked report / approval]
+    F --> H[Memory / wiki / report decision]
+    G --> B
+```
+
+The important part is not the diagram. The important part is that every handoff has an owner, boundary, and proof.
+
+## How this is different
+
+| Category | What it gives you | What this kit adds |
+|---|---|---|
+| Agent frameworks | Agent runtime, tools, model calls | Operating contracts around the work |
+| Kanban/task boards | Task tracking and status | Required task fields, side-effect boundaries, done/blocked reports |
+| Governance/security tools | Policy enforcement and audit logs | Practical team workflow: who owns what, what is allowed, what counts as done |
+| Prompt libraries | Reusable instructions | Verification and release hygiene around real execution |
+
+Use this kit with those tools. It is the reliability layer between the human goal and agent execution.
+
 ## What you get
 
 - A **dispatcher/worker operating model** for agent teams.
@@ -33,6 +60,12 @@ This kit fixes those boring parts.
 - A memory/wiki/report decision bridge.
 - A small CLI that audits task markdown files and public repo hygiene.
 - Ready-to-copy examples for coding, research, and release work.
+
+Scenario examples:
+
+- [`examples/scenarios/public-github-release.md`](examples/scenarios/public-github-release.md)
+- [`examples/scenarios/multi-agent-research-brief.md`](examples/scenarios/multi-agent-research-brief.md)
+- [`examples/scenarios/coding-agent-review-loop.md`](examples/scenarios/coding-agent-review-loop.md)
 
 ## Who is this for?
 
@@ -84,6 +117,8 @@ That example is intentionally incomplete and should fail.
 
 ## Quick start
 
+For a 30-minute rollout path, see [`docs/ADOPTION_GUIDE.md`](docs/ADOPTION_GUIDE.md).
+
 1. Copy `templates/task-contract.md` into your task board, issue, or agent queue.
 2. Fill in owner, allowed paths, forbidden paths, privacy level, side-effect policy, and verification.
 3. Give the task to an agent.
@@ -132,11 +167,12 @@ The scanner looks for common public-release mistakes: private local paths, bytec
 ## Repository layout
 
 ```text
-docs/       Operating contracts and explanations
-templates/  Copy-paste task, report, and release templates
-examples/   Good and bad task examples
-src/        Small audit CLI
-tests/      Offline regression tests
+docs/                Operating contracts and explanations
+templates/           Copy-paste task, report, and release templates
+examples/tasks/      Good and bad task examples
+examples/scenarios/  Real-world adoption scenarios
+src/                 Small audit CLI
+tests/               Offline regression tests
 ```
 
 ## Public links
@@ -209,6 +245,8 @@ MIT. See `LICENSE`.
 ## Быстрый старт
 
 Нужен Python 3.10+.
+
+Пошаговое внедрение за 30 минут: [`docs/ADOPTION_GUIDE.md`](docs/ADOPTION_GUIDE.md).
 
 ```bash
 python -m pip install -e .
