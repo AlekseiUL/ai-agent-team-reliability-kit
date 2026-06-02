@@ -1,5 +1,7 @@
 # AI Agent Team Reliability Kit
 
+![AI Agent Team Reliability Kit cover](docs/assets/ai-agent-team-reliability-kit-cover.jpg)
+
 Operating contracts, task templates, safety gates, and audit scripts for running multi-agent AI teams without chaos.
 
 This is **not another agent framework** and **not another Kanban board**. It is a reliability layer you put around any agent team so tasks have owners, boundaries, approval rules, verification, and clean handoffs.
