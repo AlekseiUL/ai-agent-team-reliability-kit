@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- added launch post draft in Russian and English;
+- polished Russian README wording and linked the launch post.
+
 ## v0.1.1
 
 README and adoption polish:

@@ -67,6 +67,10 @@ Scenario examples:
 - [`examples/scenarios/multi-agent-research-brief.md`](examples/scenarios/multi-agent-research-brief.md)
 - [`examples/scenarios/coding-agent-review-loop.md`](examples/scenarios/coding-agent-review-loop.md)
 
+Launch post draft:
+
+- [`docs/LAUNCH_POST.md`](docs/LAUNCH_POST.md)
+
 ## Who is this for?
 
 This kit is for people who run or build:
@@ -201,29 +205,29 @@ MIT. See `LICENSE`.
 
 # Русская версия
 
-**AI Agent Team Reliability Kit** — это набор операционных контрактов, шаблонов задач, safety-gates и audit-скриптов для агентных команд.
+**AI Agent Team Reliability Kit** — это набор операционных контрактов, шаблонов задач, safety gates и audit-скриптов для агентных команд.
 
 Это **не очередной фреймворк агентов** и **не новая Kanban-доска**. Это слой надёжности вокруг уже существующей агентной системы.
 
 ## Зачем это нужно
 
-Агентные команды чаще ломаются не из-за “плохой модели”, а из-за скучных вещей:
+Агентные команды чаще ломаются не из-за "плохой модели", а из-за скучных вещей:
 
 - непонятно, кто владелец задачи;
-- задача написана как “проверь это”;
+- задача написана как "проверь это";
 - агент лезет не в те файлы;
 - внешние действия не ограничены;
 - нет approval boundary;
 - нет проверки результата;
-- “готово” не объясняет, что сделано;
+- "готово" не объясняет, что сделано;
 - память агента превращается в свалку;
-- public GitHub repo случайно тащит локальные пути, секреты или приватный runtime-мусор.
+- публичный GitHub-репозиторий случайно тащит локальные пути, секреты или приватный runtime-мусор.
 
 Этот kit закрывает именно эти скучные, но критичные места.
 
 ## Что внутри
 
-- модель “диспетчер → специалист”;
+- модель "диспетчер → специалист";
 - строгий шаблон карточки задачи;
 - privacy и side-effect policy;
 - verification gate;
@@ -236,11 +240,11 @@ MIT. See `LICENSE`.
 
 Для тех, кто строит или использует:
 
-- AI-agent команды;
+- агентные AI-команды;
 - Hermes / Claude Code / Codex / OpenClaw / кастомные agent workflows;
 - локальные автоматизации;
-- research/coding/content/ops pipeline’ы;
-- public GitHub инструменты с проверкой приватности перед публикацией.
+- research/coding/content/ops workflows;
+- публичные GitHub-инструменты с проверкой приватности перед публикацией.
 
 ## Быстрый старт
 
