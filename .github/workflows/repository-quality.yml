@@ -1,0 +1,31 @@
+name: repository-quality
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install package
+        run: python -m pip install -e . pytest
+      - name: Repository quality
+        run: python scripts/repository_quality.py
+      - name: Tests
+        run: pytest -q
+      - name: CLI smoke
+        run: |
+          agent-team-reliability doctor
+          agent-team-reliability audit-tasks examples/tasks || true
+          agent-team-reliability scan-repo .
