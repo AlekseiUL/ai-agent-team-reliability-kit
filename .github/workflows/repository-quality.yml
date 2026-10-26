@@ -27,5 +27,5 @@ jobs:
       - name: CLI smoke
         run: |
           agent-team-reliability doctor
-          agent-team-reliability audit-tasks examples/tasks || true
+          python scripts/check_audit_fixture.py
           agent-team-reliability scan-repo .
